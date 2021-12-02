@@ -37,6 +37,15 @@ p {
 .select__wrapper {
   width: 50%;
   margin: 0 auto 80px auto;
+  transition: .3s;
+
+  @media (max-width: $small_width) {
+    width: 70%;
+  }
+
+  @media (max-width: $mobile_size) {
+    width: 100%;
+  }
 }
 
 .select {
