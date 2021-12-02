@@ -1,1 +1,18 @@
 @import "../../index";
+
+.admin__wrapper {
+  padding: 30px;
+}
+
+.admin__logout-block {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin__logout-item {
+  max-width: 120px;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}

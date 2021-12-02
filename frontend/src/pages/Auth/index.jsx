@@ -1,12 +1,20 @@
 import React from "react";
 import { Input, Form, Button} from 'antd';
 import './index.scss';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {loginAction} from "../../actions/auth";
 import {getCookie} from "../../constants";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 const Auth = () => {
+	
+	const {
+		errorAuth,
+		isLoading,
+	} = useSelector((state) => ({
+		errorAuth: state.auth.errorAuth,
+		isLoading: state.auth.isLoading
+	}));
 	
 	const token = getCookie('token');
 	const department = getCookie('department')
@@ -16,7 +24,6 @@ const Auth = () => {
 	const [form] = Form.useForm();
 	
 	const onFinish = (values) => {
-		console.log('Форма отправлена!', values);
 		dispatch(loginAction(values));
 	};
 	
@@ -65,8 +72,11 @@ const Auth = () => {
 						Авторизоваться
 					</Button>
 				</Form.Item>
-			
 			</Form>
+			
+			<Link to={'/'}>
+				Вернуться на сайт
+			</Link>
 		</div>
 	)
 };

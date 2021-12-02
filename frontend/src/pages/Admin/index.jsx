@@ -1,16 +1,39 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './index.scss';
 import { getCookie } from "../../constants";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {getAllDays} from "../../actions/day";
+import {logoutAction} from "../../actions/auth";
 
 const Admin = () => {
 	
+	const dispatch = useDispatch();
+	
+	useEffect(() => {
+		dispatch(getAllDays())
+	});
+	
 	const token = getCookie('token');
-	const department = getCookie('department')
+	const department = getCookie('department');
+	
+	const logout = () => {
+		dispatch(logoutAction())
+	};
 	
 	return (token && department ?
-		<div>
-			Admin panel
+		<div className={'admin__wrapper'}>
+			<div className={'admin__logout-block'}>
+				<Link to={'/'} className={'admin__logout-item'}>
+					На сайт
+				</Link>
+				<Link
+					onClick={() => logout()}
+					to={'/auth'}
+					className={'admin__logout-item'}>
+					Выход
+				</Link>
+			</div>
 		</div> :
 		<Redirect to={'/auth'} />
 	)

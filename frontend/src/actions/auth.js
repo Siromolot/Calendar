@@ -42,10 +42,8 @@ export const logoutAction = () => async (dispatch) => {
 
     const token = getCookie("token");
 
-    document.cookie = `SA=; max-age=0`;
-    document.cookie = `role=; max-age=0`;
+    document.cookie = `department=; max-age=0`;
     document.cookie = `token=; max-age=0`;
-    document.cookie = `access=; max-age=0`;
 
     dispatch({
         type: LOGOUT_REQUEST
