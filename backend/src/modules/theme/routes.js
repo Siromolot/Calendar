@@ -4,13 +4,25 @@ import * as Joi from "@hapi/joi";
 const themeRoutes =  [
     {
         method: "GET",
+        path: "/theme",
+        handler: themeControllers.getOneTheme,
+        options: {
+            validate: {
+                query: Joi.object ({
+                    department: Joi.string().required(),
+                    day: Joi.string().required(),
+                }).required(),
+            },
+        }
+    },
+    {
+        method: "GET",
         path: "/themes",
         handler: themeControllers.getThemes,
         options: {
             validate: {
                 query: Joi.object ({
                     department: Joi.string().required(),
-                    date: Joi.string().required(),
                 }).required(),
             },
         }

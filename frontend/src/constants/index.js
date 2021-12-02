@@ -15,9 +15,13 @@ export const GET_DAY_REQUEST = 'GET_DAY_REQUEST';
 export const GET_DAY_SUCCESS = 'GET_DAY_SUCCESS';
 export const GET_DAY_FAILED = 'GET_DAY_FAILED';
 
+export const GET_ALL_DAYS_REQUEST = 'GET_ALL_DAYS_REQUEST';
+export const GET_ALL_DAYS_SUCCESS = 'GET_ALL_DAYS_SUCCESS';
+export const GET_ALL_DAYS_FAILED = 'GET_ALL_DAYS_FAILED';
+
 export const URL = process.env.NODE_ENV === "production" ?
     // TODO: указать новый url
-    "https://shaurma-nn.ru:47000/" : "http://localhost:47000/";
+    "https://shaurma-nn.ru:49000/" : "http://localhost:49000/";
 
 export const getCookie = (cname) => {
   let name = cname + '=';

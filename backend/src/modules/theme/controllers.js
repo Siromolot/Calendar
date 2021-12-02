@@ -10,23 +10,40 @@ import uuid from "uuid";
 
 const themeControllers = {
     
-    async getThemes (req) {
+    async getTheme (req) {
         
         try {
             const date = new Date();
-            if (req.query.date > date) {
+            if (req.query.day > date) {
                 return 'Ну сказали же, что рано ) Ну куда ты торопишься )'
             }
             
-            const match = await db.theme.find({
+            const match = await db.theme.findOne({
                 department: req.query.department,
-                date: req.query.date
+                date: req.query.day
             });
             
             if (match !== null) {
                 return match
             } else {
                 return 'Ой, что-то на эту дату у нас ничего нет'
+            }
+        } catch (err) {
+            return Boom.badRequest(err)
+        }
+    },
+    
+    async getThemes (req) {
+        
+        try {
+            const match = await db.theme.find({
+                department: req.query.department,
+            });
+            
+            if (match !== null) {
+                return match
+            } else {
+                return []
             }
         } catch (err) {
             return Boom.badRequest(err)
