@@ -33,3 +33,28 @@ body {
 p {
   margin-bottom: 18px;
 }
+
+.select__wrapper {
+  width: 50%;
+  margin: 0 auto 80px auto;
+}
+
+.select {
+  width: 100%;
+}
+
+//  перебивка antD
+.ant-select {
+  color: white;
+}
+
+.ant-select-selector {
+  background: url('./assets/images/backgroundNY5.jpg');
+  border-color: $color_lad !important;
+  font-family: 'Inter-Regular';
+  &:hover {
+    border-color: $color_lad !important;
+  }
+}
+
+// конец antD

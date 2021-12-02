@@ -3,6 +3,7 @@ import Modal from "../../components/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Calendar from "../../components/Calendar";
 import Header from "../../components/Header";
+import SelectDepartment from "../../components/SelectDepartment";
 import './index.scss';
 
 const Main = () => {
@@ -12,11 +13,6 @@ const Main = () => {
   } = useSelector(state => ({
     modal: state.modal.modal,
   }));
-
-  const dispatch = useDispatch();
-
-  // рефы для скрола
-  const menuRef = useRef(null);
 
   return (
     <div className={'main'}>
@@ -48,6 +44,8 @@ const Main = () => {
           Успехов! И с наступающими зимними праздниками )
         </p>
       </section>
+      
+      <SelectDepartment />
       
       <Calendar />
       

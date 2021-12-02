@@ -6,6 +6,7 @@
   position: fixed;
   z-index: 1300;
   transition: .3s;
+  //background: url('../../assets/images/modal_background.jpg');
   background-color: rgba(0, 0, 0, 0.8);
   top:0;
   left: 0;
@@ -13,16 +14,19 @@
 
 .modal__body {
   width: 40%;
+  padding: 20px;
   box-sizing: border-box;
   z-index: 1400;
-  background-color: $link_color;
-  border-radius: 10px;
+  background: url('../../assets/images/backgroundNY5.jpg');
+  border: 1px solid $color_lad;
   position: fixed;
   left: 50%;
   top: 13.5%;
   transform: translate(-50%);
+  min-height: 50vh;
   max-height: 78vh;
   overflow: auto;
+  transition: .3s;
 
   @media (max-width: $mobile_size) {
     width: 85%;

@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 import {useDispatch, useSelector} from "react-redux";
 import { toggleModal, setModalData } from "../../actions/modal";
-
+import CalendarItemModal from './CalendarItemModal';
 
 const Modal = () => {
 
@@ -18,9 +18,9 @@ const Modal = () => {
     <div>
       <div className={'modal'} onClick={() => dispatch(toggleModal(false))} />
 
-        {/* модальное окнос фото еды */}
-        {/*{modalData.img ?*/}
-        {/*    <ImageModal data={modalData} /> : null}*/}
+        {/* модальное окно дня календаря */}
+        {modalData.day ?
+            <CalendarItemModal data={modalData.day} /> : null}
       
       {/*<CloseIcon*/}
       {/*  className={'modal__close-button'}*/}
