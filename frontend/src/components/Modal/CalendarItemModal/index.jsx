@@ -18,8 +18,10 @@ const CalendarItemModal = ({data}) => {
 	const dayIsOpen = currentDay > new Date(data.date).getTime();
 	
 	useEffect(() => {
-		dispatch(getDay(data))
-	})
+		if (department) {
+			dispatch(getDay(data))
+		}
+	});
 	
 	return (
 		<div className={'modal__body'}>
@@ -31,7 +33,7 @@ const CalendarItemModal = ({data}) => {
 							Рано заглянул сюда, не торопись&nbsp;)
 						</div>) :
 						<div className={'modal__closed-day'}>
-							Чтобы увидеть интересности - надо сначала выбрать отдел
+							Чтобы увидеть интересности - надо сначала выбрать направление
 						</div>
 			}
 		</div>

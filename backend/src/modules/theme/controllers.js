@@ -10,7 +10,7 @@ import uuid from "uuid";
 
 const themeControllers = {
     
-    async getTheme (req) {
+    async getOneTheme (req) {
         
         try {
             const date = new Date();

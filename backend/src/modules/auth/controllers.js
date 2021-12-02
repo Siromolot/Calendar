@@ -56,7 +56,7 @@ const authControllers = {
     async login (req) {
         try {
             const { payload } = req;
-            const match = await db.user.findOne({ login: payload.login });
+            const match = await db.moderator.findOne({ login: payload.login });
             const passwordHash = shajs('sha256').update((payload.password + salt)).digest('hex');
             const newToken = uuid();
 
@@ -81,7 +81,7 @@ const authControllers = {
     async logout (req) {
         try {
             const { credentials } = req.auth;
-            const match = await db.user.findOne({ token: credentials.token });
+            const match = await db.moderator.findOne({ token: credentials.token });
 
             if (match !== null) {
                 await match.updateOne({

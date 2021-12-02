@@ -3,14 +3,19 @@ import { Route, Switch } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 
 import Main from './pages/Main';
+import Auth from './pages/Auth';
 
 function App() {
 
     const pages = [
-        {
-            path: '/',
-            component: Main
-        },
+      {
+          path: '/',
+          component: Main
+      },
+      {
+        path: '/auth',
+        component: Auth
+      },
     ];
 
     const pageItem = pages.map(page => (

@@ -24,12 +24,13 @@ const SelectDepartment = () => {
 	return (
 		<div className={'select__wrapper'}>
 			<Select
-				placeholder={'Выберите отдел'}
+				placeholder={'Выбери направление'}
 				className={'select'}
 				onChange={handleChange}
 				size="large">
 				{departments.map(department => (
 					<Option
+						key={department.value}
 						value={department.value}>
 						{department.name}
 					</Option>

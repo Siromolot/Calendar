@@ -16,19 +16,16 @@ export const loginAction = (data) => async (dispatch) => {
 
     try {
         const user = {
-            email: data.Login.trim().toLowerCase(),
-            password: data.Password.trim(),
+            login: data.login.trim().toLowerCase(),
+            password: data.password.trim(),
         }
 
         const response = await axios.post(`${URL}auth`, user);
 
         if (response.data.access) {
-            if (response.data.SA) {
-                document.cookie = `SA=${response.data.SA}`;
-            }
-            document.cookie = `role=${response.data.role}`;
+            document.cookie = `department=${response.data.department}`;
             document.cookie = `token=${response.data.token}`;
-            document.cookie = `access=${response.data.access}`;
+      
             dispatch({
                 type: LOGIN_SUCCESS,
                 payload: response.data
