@@ -1,15 +1,35 @@
 $link_color: white;
+$color_lad: #004BFF;
 $medium_width: 1075px;
 $small_width: 800px;
 $mobile_size: 500px;
 $old_mobile_size: 359px;
 $less_than_old_mobile_size: 299px;
 
+
 * {
   padding: 0;
   margin: 0;
 }
 
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(./assets/fonts/Inter/static/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Inter-Light";
+  src: url(./assets/fonts/Inter/static/Inter-Light.ttf);
+}
+
 body {
   background-image: url('../src/assets/images/backgroundNY.jpg');
+  font-family: 'Inter-Regular';
+  color: white;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+p {
+  margin-bottom: 15px;
 }

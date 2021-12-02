@@ -1,5 +1,19 @@
 @import "../../index";
 
-//.main {
-//  background-image: url('../../assets/images/darkNY.png');
-//}
+.main {
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.main__description {
+  margin: 80px 0;
+}
+
+.main__border_text {
+  text-align: center;
+  padding: 25px 20px;
+  border: 1px solid $color_lad;
+  margin-bottom: 80px;
+}
