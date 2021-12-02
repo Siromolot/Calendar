@@ -4,6 +4,7 @@ import { HashRouter } from "react-router-dom";
 
 import Main from './pages/Main';
 import Auth from './pages/Auth';
+import Admin from './pages/Admin';
 
 function App() {
 
@@ -15,6 +16,10 @@ function App() {
       {
         path: '/auth',
         component: Auth
+      },
+      {
+        path: '/admin',
+        component: Admin
       },
     ];
 

@@ -3,8 +3,13 @@ import { Input, Form, Button} from 'antd';
 import './index.scss';
 import {useDispatch} from "react-redux";
 import {loginAction} from "../../actions/auth";
+import {getCookie} from "../../constants";
+import {Redirect} from "react-router-dom";
 
 const Auth = () => {
+	
+	const token = getCookie('token');
+	const department = getCookie('department')
 	
 	const dispatch = useDispatch();
 	
@@ -15,7 +20,9 @@ const Auth = () => {
 		dispatch(loginAction(values));
 	};
 	
-	return (
+	return (token && department ?
+			<Redirect to={'/admin'} /> :
+			
 		<div>
 			<Form
 				form={form}

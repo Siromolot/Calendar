@@ -21,21 +21,15 @@ export const loginAction = (data) => async (dispatch) => {
         }
 
         const response = await axios.post(`${URL}auth`, user);
-
-        if (response.data.access) {
-            document.cookie = `department=${response.data.department}`;
-            document.cookie = `token=${response.data.token}`;
-      
-            dispatch({
-                type: LOGIN_SUCCESS,
-                payload: response.data
-            });
-        } else {
-            dispatch({
-                type: LOGIN_FAILED,
-                payload: response.data
-            });
-        }
+        
+        document.cookie = `department=${response.data.department}`;
+        document.cookie = `token=${response.data.token}`;
+  
+        dispatch({
+            type: LOGIN_SUCCESS,
+            payload: response.data
+        });
+        
     } catch (e) {
         dispatch({
             type: LOGIN_FAILED,
