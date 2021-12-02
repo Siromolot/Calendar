@@ -5,7 +5,7 @@ import {Button} from "antd";
 const AdminCalendarItem = ({data}) => {
 	
 	return (
-		<div>
+		<div className={'admin-calendar-item__wrapper'}>
 			<div>
 				{new Date(data).getDate()}
 			</div>

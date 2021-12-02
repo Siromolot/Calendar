@@ -18,8 +18,6 @@ const Calendar = () => {
 		dates = [...dates, currentDateData];
 	}
 	
-	console.log('dates: ', dates);
-	
 	return (
 		<div className={'calendar__wrapper'}>
 			{dates.map(day => {
