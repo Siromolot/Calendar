@@ -6,14 +6,13 @@
   position: fixed;
   z-index: 1300;
   transition: .3s;
-  //background: url('../../assets/images/modal_background.jpg');
   background-color: rgba(0, 0, 0, 0.8);
   top:0;
   left: 0;
 }
 
 .modal__body {
-  width: 40%;
+  width: 50%;
   padding: 20px;
   box-sizing: border-box;
   z-index: 1400;
@@ -27,6 +26,16 @@
   max-height: 78vh;
   overflow: auto;
   transition: .3s;
+
+  @media (max-width: $medium_width) {
+    width: 60%;
+    overflow: auto;
+  }
+
+  @media (max-width: $small_width) {
+    width: 70%;
+    overflow: auto;
+  }
 
   @media (max-width: $mobile_size) {
     width: 85%;
