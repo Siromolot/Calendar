@@ -1,0 +1,32 @@
+@import "../../index";
+
+.calendar-item {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: all 0.25s ease-out 0s;
+  transform-origin: center top;
+
+  &:hover {
+    cursor: pointer;
+    transform: rotateX(-30deg) skew(-3deg, 0) scale(1, 1.05);
+    background: rgba(255, 255, 255, 0.375);
+  }
+
+  @media (max-width: $old_mobile_size) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.calendar-item__open-day {
+  border: 3px solid green;
+}
+
+.calendar-item__close-day {
+  border: 3px dashed red;
+}

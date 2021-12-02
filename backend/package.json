@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node src/server",
+    "start_dev": "cross-env NODE_ENV=development node src/server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "@hapi/hapi": "^20.2.1",
+    "@hapi/inert": "^6.0.4",
+    "@hapi/joi": "^17.1.1",
+    "axios": "^0.24.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "fs": "0.0.1-security",
+    "hapi-auth-bearer-token": "^6.1.2",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.14",
+    "sha.js": "^2.4.11",
+    "uuid": "^3.3.3"
+  }
+}

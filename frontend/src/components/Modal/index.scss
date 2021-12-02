@@ -1,0 +1,64 @@
+@import '../../index';
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1300;
+  transition: .3s;
+  background-color: rgba(0, 0, 0, 0.8);
+  top:0;
+  left: 0;
+}
+
+.modal__body {
+  width: 40%;
+  box-sizing: border-box;
+  z-index: 1400;
+  background-color: $link_color;
+  border-radius: 10px;
+  position: fixed;
+  left: 50%;
+  top: 13.5%;
+  transform: translate(-50%);
+  max-height: 78vh;
+  overflow: auto;
+
+  @media (max-width: $mobile_size) {
+    width: 85%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow: auto;
+  }
+}
+
+.modal__body-text-block {
+  padding: 40px 20px;
+}
+
+.modal__close-button {
+  width: 40px;
+  z-index: 1500;
+  position: fixed;
+  left: 71%;
+  top: 12.5%;
+  color: $link_color;
+
+  @media (max-width: $mobile_size) {
+    width: 25px;
+    left: 80%;
+    top: 4%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.modal__button {
+  margin-top: 8px;
+}
+
+.input_file {
+  margin: 12px 0 8px 0;
+}
