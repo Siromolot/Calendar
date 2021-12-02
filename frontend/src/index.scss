@@ -4,3 +4,12 @@ $small_width: 800px;
 $mobile_size: 500px;
 $old_mobile_size: 359px;
 $less_than_old_mobile_size: 299px;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url('../src/assets/images/backgroundNY.jpg');
+}

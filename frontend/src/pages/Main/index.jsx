@@ -2,6 +2,8 @@ import React, {useRef, useState, useEffect} from 'react';
 import Modal from "../../components/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Calendar from "../../components/Calendar";
+import Header from "../../components/Header";
+import './index.scss';
 
 const Main = () => {
 
@@ -18,6 +20,9 @@ const Main = () => {
 
   return (
     <div className={'main'}>
+      
+      <Header />
+      
       <div>
         Предновогодний скилл бустер
       </div>
