@@ -23,7 +23,7 @@ const Auth = () => {
 	return (token && department ?
 			<Redirect to={'/admin'} /> :
 			
-		<div>
+		<div className={'auth__wrapper'}>
 			<Form
 				form={form}
 				layout={'vertical'}
@@ -31,7 +31,8 @@ const Auth = () => {
 				onFinish={onFinish}>
 				<Form.Item
 					name="login"
-					label={'Логин'}
+					className={'form__fields'}
+					label='Логин'
 					rules={[
 						{
 							required: true,
@@ -43,7 +44,8 @@ const Auth = () => {
 				
 				<Form.Item
 					name="password"
-					label={'Пароль'}
+					label='Пароль'
+					className={'form__fields'}
 					rules={[
 						{
 							required: true,
