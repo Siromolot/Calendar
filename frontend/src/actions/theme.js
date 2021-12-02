@@ -60,7 +60,8 @@ export const getAllDays = () => async (dispatch) => {
 		
 	} catch (err) {
 		dispatch({
-			type: GET_ALL_DAYS_FAILED
+			type: GET_ALL_DAYS_FAILED,
+			payload: err.message
 		})
 	}
 }

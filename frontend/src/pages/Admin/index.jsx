@@ -3,19 +3,21 @@ import './index.scss';
 import { getCookie } from "../../constants";
 import {Link, Redirect} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {getAllDays} from "../../actions/day";
+import {getAllDays} from "../../actions/theme";
 import {logoutAction} from "../../actions/auth";
 
 const Admin = () => {
 	
 	const dispatch = useDispatch();
 	
-	useEffect(() => {
-		dispatch(getAllDays())
-	});
-	
 	const token = getCookie('token');
 	const department = getCookie('department');
+	
+	useEffect(() => {
+		if (token && department) {
+			dispatch(getAllDays())
+		}
+	}, []);
 	
 	const logout = () => {
 		dispatch(logoutAction())

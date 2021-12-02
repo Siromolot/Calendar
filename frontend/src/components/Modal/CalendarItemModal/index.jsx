@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import '../index.scss';
 import './index.scss';
 import {useDispatch, useSelector} from "react-redux";
-import {getDay} from "../../../actions/day";
+import {getDay} from "../../../actions/theme";
 
 const CalendarItemModal = ({data}) => {
 	
