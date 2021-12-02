@@ -2,17 +2,32 @@
 
 .admin__wrapper {
   padding: 30px;
+
+  @media (max-width: $mobile_size) {
+    padding: 20px;
+  }
 }
 
 .admin__logout-block {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin__logo-block {
+  width: 40%;
 }
 
 .admin__logout-item {
+  width: auto;
   max-width: 120px;
   padding: 20px;
   box-sizing: border-box;
   cursor: pointer;
+
+  @media (max-width: $mobile_size) {
+    font-size: 16px;
+    padding: 10px;
+  }
 }

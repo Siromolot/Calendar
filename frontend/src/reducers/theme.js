@@ -9,7 +9,7 @@ import {
 
 const initialState = {
 	currentTheme: {},
-	allThemes: null,
+	allThemes: [],
 	isLoading: false,
 	errorThemeLoading: '',
 }
@@ -27,7 +27,7 @@ export default function themeReducer(state = initialState, action) {
 		case GET_ALL_DAYS_SUCCESS:
 			return {
 				...state,
-				allThemes: action.payload.allThemes,
+				allThemes: action.payload,
 				isLoading: false,
 				errorThemeLoading: ''
 			};
