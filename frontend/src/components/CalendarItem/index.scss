@@ -30,5 +30,6 @@
 }
 
 .calendar-item__close-day {
-  border: 3px dashed red;
+  //border: 3px dashed red;
+  border: 3px dashed lighten($color_lad, 20%);
 }
