@@ -2,8 +2,9 @@
 
 .auth__wrapper {
   width: 400px;
-  margin: 50px auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 70px 0 20px 0;
+  box-sizing: border-box;
 
   @media (max-width: $mobile_size) {
     width: 80%;
