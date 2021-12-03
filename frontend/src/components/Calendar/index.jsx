@@ -8,7 +8,7 @@ const Calendar = () => {
 	
 	for (let i = 7; i <= 30; i++ ) {
 		// ToDO: пока стоит дата 1 декабря для тестов, потом поменять на 6 декабря
-		const startDate = new Date("2021-12-01").getTime();
+		const startDate = new Date("2021-12-06").getTime();
 		
 		const currentDateData = {
 			date: new Date(startDate + (24 * 60 * 60 * 1000 * (i - 6))),
