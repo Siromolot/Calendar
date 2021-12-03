@@ -8,6 +8,9 @@ import {
 	ADD_THEME_REQUEST,
 	ADD_THEME_SUCCESS,
 	ADD_THEME_FAILED,
+	EDIT_THEME_REQUEST,
+	EDIT_THEME_SUCCESS,
+	EDIT_THEME_FAILED,
 	URL,
 	getCookie
 } from '../constants';
@@ -97,6 +100,42 @@ export const addTheme = (data) => async (dispatch) => {
 	} catch (err) {
 		dispatch({
 			type: ADD_THEME_FAILED,
+			payload: err.message
+		})
+	}
+};
+
+export const editTheme = (data, id) => async (dispatch) => {
+	dispatch({
+		type: EDIT_THEME_REQUEST
+	});
+	
+	const token = getCookie('token');
+	const config = {
+		headers: {
+			Authorization: "Bearer" + " " + token
+		}
+	};
+	const sendingData = {
+		...data,
+		id
+	}
+	
+	try{
+		
+		const response = await axios.put(
+			`${URL}themes`, sendingData, config)
+		
+		dispatch({
+			type: EDIT_THEME_SUCCESS,
+			payload: response.data
+		});
+		
+		dispatch(toggleModal(false));
+		
+	} catch (err) {
+		dispatch({
+			type: EDIT_THEME_FAILED,
 			payload: err.message
 		})
 	}

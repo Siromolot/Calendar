@@ -4,11 +4,11 @@ import {Button, Form, Input} from "antd";
 import {useDispatch} from "react-redux";
 import TextArea from "antd/es/input/TextArea";
 import {getCookie} from "../../../constants";
-import {addTheme} from "../../../actions/theme";
+import {addTheme, editTheme} from "../../../actions/theme";
 
 const ThemeModal = ({dataTheme}) => {
 	
-	console.log("DATA: ", dataTheme);
+	console.log('dataTheme: ', dataTheme);
 	
 	const department = getCookie('department');
 	
@@ -22,6 +22,11 @@ const ThemeModal = ({dataTheme}) => {
 			department,
 			date: dataTheme?.theme?.data?.date
 		}
+		
+		const id = dataTheme?.theme?.id;
+		
+		dataTheme?.theme?.department ?
+		dispatch(editTheme(data, id)) :
 		dispatch(addTheme(data));
 	};
 	
@@ -34,7 +39,7 @@ const ThemeModal = ({dataTheme}) => {
 				onFinish={onFinish}>
 				<Form.Item
 					name="title"
-					initialValue={dataTheme?.theme?.data?.title || ''}
+					initialValue={dataTheme?.theme?.title || ''}
 					className={'form__fields'}
 					label='Тема'
 					rules={[
@@ -49,7 +54,7 @@ const ThemeModal = ({dataTheme}) => {
 				<Form.Item
 					name="description"
 					label='Краткое описание'
-					initialvalue={dataTheme?.theme?.data?.title || ''}
+					initialValue={dataTheme?.theme?.description || ''}
 					className={'form__fields'}
 				>
 					<TextArea rows={2}/>
@@ -58,7 +63,7 @@ const ThemeModal = ({dataTheme}) => {
 				<Form.Item
 					name="link"
 					className={'form__fields'}
-					initialValue={dataTheme?.theme?.data?.link || ''}
+					initialValue={dataTheme?.theme?.link || ''}
 					label='Ссылка'
 					rules={[
 						{

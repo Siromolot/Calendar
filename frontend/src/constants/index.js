@@ -23,6 +23,10 @@ export const ADD_THEME_REQUEST = 'ADD_THEME_REQUEST';
 export const ADD_THEME_SUCCESS = 'ADD_THEME_SUCCESS';
 export const ADD_THEME_FAILED = 'ADD_THEME_FAILED';
 
+export const EDIT_THEME_REQUEST = 'EDIT_THEME_REQUEST';
+export const EDIT_THEME_SUCCESS = 'EDIT_THEME_SUCCESS';
+export const EDIT_THEME_FAILED = 'EDIT_THEME_FAILED';
+
 export const URL = process.env.NODE_ENV === "production" ?
     // TODO: указать новый url
     "https://shaurma-nn.ru:49000/" : "http://localhost:49000/";

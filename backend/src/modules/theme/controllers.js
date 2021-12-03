@@ -57,7 +57,10 @@ const themeControllers = {
 
             if (credentials) {
 
-                const match = await db.theme.findOne({ title: payload.title });
+                const match = await db.theme.findOne({
+                    link: payload.link,
+                    department: payload.department
+                });
 
                 if (match === null) {
 
@@ -86,12 +89,11 @@ const themeControllers = {
         const {payload} = req;
 
         try {
-            if (credentials) {
-
-                const match = await db.theme.findOne({
-                    id: payload.id
-                });
-
+            const match = await db.theme.findOne({
+                id: payload.id,
+            });
+    
+            if (credentials.department !== match.department) {
                 if (match !== null) {
                     await match.update({
                         department: match.department,

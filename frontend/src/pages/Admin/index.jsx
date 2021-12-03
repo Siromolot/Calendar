@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import './index.scss';
 import { getCookie } from "../../constants";
 import {Link, Redirect} from "react-router-dom";
@@ -35,6 +35,7 @@ const Admin = () => {
 	
 	let dates = [];
 	
+	// цикл с 7-го декабря по 30-е декабря
 	for (let i = 7; i <= 30; i++ ) {
 		const startDate = new Date("2021-12-06").getTime();
 		
