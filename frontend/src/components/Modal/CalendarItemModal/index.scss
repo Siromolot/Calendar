@@ -8,3 +8,13 @@
   justify-content: center;
   text-align: center;
 }
+
+.modal__calendar-item_topic {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.modal__calendar-item_description {
+  font-size: 16px;
+  color: darken(white, 20%);
+}

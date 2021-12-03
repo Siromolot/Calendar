@@ -34,15 +34,19 @@ const CalendarItemModal = ({data}) => {
 					(dayIsOpen ?
 						currentTheme?.title ?
 						<div>
-								<p>
+								<p className={'modal__calendar-item_topic'}>
 								{currentTheme?.title}
 								</p>
-								<p>
+								<p className={'modal__calendar-item_description'}>
 									{currentTheme?.description}
 								</p>
-								<p>
+								<a className={'modal__calendar-item_description'}
+									href={currentTheme?.link}
+									target={'_blank'}
+									aria-label={'to the theme link'}
+									rel='noreferrer'>
 									{currentTheme?.link}
-								</p>
+								</a>
 						</div> :
 							<div className={'modal__closed-day'}>
 								{currentTheme}
