@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { toggleModal, setModalData } from "../../actions/modal";
 import CalendarItemModal from './CalendarItemModal';
 import ThemeModal from "./ThemeModal";
+import DeletingModal from "./DeletingModal";
 
 const Modal = () => {
 
@@ -27,9 +28,9 @@ const Modal = () => {
       {modalData.theme && !modalData.deleting ?
         <ThemeModal dataTheme={modalData} /> : null}
   
-      {/* модальное окно для удаления чего-либо */}
-      {/*{modalData.deleting ?*/}
-      {/*  <Deleting data={modalData} /> : null}*/}
+       модальное окно для удаления чего-либо
+      {modalData.deleting ?
+        <DeletingModal data={modalData} /> : null}
 
     </div>
   )

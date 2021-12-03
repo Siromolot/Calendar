@@ -11,6 +11,9 @@ import {
 	EDIT_THEME_REQUEST,
 	EDIT_THEME_SUCCESS,
 	EDIT_THEME_FAILED,
+	DELETE_THEME_REQUEST,
+	DELETE_THEME_SUCCESS,
+	DELETE_THEME_FAILED,
 } from "../constants";
 
 const initialState = {
@@ -89,6 +92,30 @@ export default function themeReducer(state = initialState, action) {
 			};
 		
 		case EDIT_THEME_FAILED:
+			return {
+				...state,
+				isLoading: false,
+				errorThemeLoading: action.payload
+			};
+		
+		case DELETE_THEME_REQUEST:
+			return {
+				...state,
+				isLoading: true,
+				errorThemeLoading: ''
+			};
+		
+		case DELETE_THEME_SUCCESS:
+			return {
+				...state,
+				allThemes: state.allThemes.filter(item => {
+					return item.id !== action.payload
+				}),
+				isLoading: false,
+				errorThemeLoading: ''
+			};
+		
+		case DELETE_THEME_FAILED:
 			return {
 				...state,
 				isLoading: false,
