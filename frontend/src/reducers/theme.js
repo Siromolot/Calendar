@@ -25,6 +25,30 @@ const initialState = {
 
 export default function themeReducer(state = initialState, action) {
 	switch (action.type) {
+		case GET_DAY_REQUEST:
+			return {
+				...state,
+				currentTheme: {},
+				isLoading: true,
+				errorThemeLoading: ''
+			};
+		
+		case GET_DAY_SUCCESS:
+			return {
+				...state,
+				currentTheme: action.payload,
+				isLoading: false,
+				errorThemeLoading: ''
+			};
+		
+		case GET_DAY_FAILED:
+			return {
+				...state,
+				currentTheme: {},
+				isLoading: false,
+				errorThemeLoading: action.payload
+			};
+			
 		case GET_ALL_DAYS_REQUEST:
 			return {
 				...state,

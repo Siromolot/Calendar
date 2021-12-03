@@ -7,9 +7,11 @@ import {getDay} from "../../../actions/theme";
 const CalendarItemModal = ({data}) => {
 	
 	const {
-		department
+		department,
+		currentTheme,
 	} = useSelector(state => ({
-		department: state.department.department
+		department: state.department.department,
+		currentTheme: state.theme.currentTheme,
 	}))
 	
 	const dispatch = useDispatch();
@@ -21,14 +23,24 @@ const CalendarItemModal = ({data}) => {
 		if (department) {
 			dispatch(getDay(data))
 		}
-	});
+	}, []);
 	
 	return (
 		<div className={'modal__body'}>
 			{
 				department ?
 					(dayIsOpen ?
-						<div>Open</div> :
+						<div>
+							<p>
+							{currentTheme?.title}
+							</p>
+							<p>
+								{currentTheme.description}
+							</p>
+							<p>
+								{currentTheme.link}
+							</p>
+						</div> :
 						<div className={'modal__closed-day'}>
 							Рано заглянул сюда, не торопись&nbsp;)
 						</div>) :
