@@ -33,7 +33,7 @@ export const DELETE_THEME_FAILED = 'DELETE_THEME_FAILED';
 
 export const URL = process.env.NODE_ENV === "production" ?
     // TODO: указать новый url
-    "https://shaurma-nn.ru:49000/" : "http://localhost:49000/";
+    "http://lad-smart.ru:49000/" : "http://localhost:49000/";
 
 export const getCookie = (cname) => {
   let name = cname + '=';
