@@ -8,6 +8,9 @@ import {
 	ADD_THEME_REQUEST,
 	ADD_THEME_SUCCESS,
 	ADD_THEME_FAILED,
+	EDIT_THEME_REQUEST,
+	EDIT_THEME_SUCCESS,
+	EDIT_THEME_FAILED,
 } from "../constants";
 
 const initialState = {
@@ -59,6 +62,33 @@ export default function themeReducer(state = initialState, action) {
 			};
 		
 		case ADD_THEME_FAILED:
+			return {
+				...state,
+				isLoading: false,
+				errorThemeLoading: action.payload
+			};
+		
+		case EDIT_THEME_REQUEST:
+			return {
+				...state,
+				isLoading: true,
+				errorThemeLoading: ''
+			};
+		
+		case EDIT_THEME_SUCCESS:
+			return {
+				...state,
+				allThemes: state.allThemes.map(item => {
+					if (item.id == action.payload.id) {
+						item = action.payload
+					}
+					return item
+				}),
+				isLoading: false,
+				errorThemeLoading: '',
+			};
+		
+		case EDIT_THEME_FAILED:
 			return {
 				...state,
 				isLoading: false,
