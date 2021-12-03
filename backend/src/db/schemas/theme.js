@@ -25,7 +25,7 @@ const themeSchema = new mongoose.Schema(
       },
       
       date: {
-        type: Date,
+        type: Number,
         required: true
       },
       

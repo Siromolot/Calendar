@@ -16,7 +16,7 @@ const AdminCalendarItem = ({data}) => {
 	return (
 		<div className={'admin-calendar-item__wrapper'}>
 			<div>
-				{new Date(data.date).getDate()}
+				{new Date(Number(data.date)).getDate()}
 			</div>
 			
 			<div>

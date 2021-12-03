@@ -20,11 +20,17 @@ const themeControllers = {
             
             const match = await db.theme.findOne({
                 department: req.query.department,
-                date: req.query.day
+                date: Number(req.query.day)
             });
             
             if (match !== null) {
-                return match
+                return {
+                    title: match.title,
+                    date: match.date,
+                    department: match.department,
+                    description: match.description,
+                    link: match.link
+                }
             } else {
                 return 'Ой, что-то на эту дату у нас ничего нет'
             }
@@ -69,10 +75,11 @@ const themeControllers = {
                         title: payload.title,
                         description: payload.description,
                         link: payload.link,
-                        date: payload.date,
+                        date: Number(payload.date),
                         id: uuid(),
-                    })
-                    return response;
+                    });
+                    
+                    return response
                 } else {
                     return Boom.badRequest('Данная тема уже существует');
                 }
@@ -92,8 +99,8 @@ const themeControllers = {
             const match = await db.theme.findOne({
                 id: payload.id,
             });
-    
-            if (credentials.department !== match.department) {
+            
+            if (credentials.department === match.department) {
                 if (match !== null) {
                     await match.update({
                         department: match.department,

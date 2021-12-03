@@ -37,17 +37,6 @@ const authControllers = {
                 } else {
                     return Boom.badRequest('Данный пользователь уже существует')
                 }
-            // } else {
-            //
-            //
-            //     await db.moderator.create({
-            //         name: payload.name,
-            //         department: payload.department,
-            //         login: payload.login,
-            //         password: shajs('sha256').update((payload.password + salt)).digest('hex'),
-            //         token: newToken,
-            //     });
-            // }
         } catch (err) {
             return Boom.badRequest(err)
         }

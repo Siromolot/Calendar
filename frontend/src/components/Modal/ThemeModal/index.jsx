@@ -17,10 +17,12 @@ const ThemeModal = ({dataTheme}) => {
 	const [form] = Form.useForm();
 	
 	const onFinish = (values) => {
+		console.log('DATE: ', dataTheme?.theme?.date);
 		const data = {
 			...values,
 			department,
-			date: dataTheme?.theme?.data?.date
+			date: new Date(dataTheme?.theme?.data?.date).getTime() ||
+				new Date(dataTheme?.theme?.date).getTime()
 		}
 		
 		const id = dataTheme?.theme?.id;

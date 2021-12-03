@@ -37,7 +37,8 @@ const Admin = () => {
 	
 	// цикл с 7-го декабря по 30-е декабря
 	for (let i = 7; i <= 30; i++ ) {
-		const startDate = new Date("2021-12-06").getTime();
+		// TODO: для тестов поставил 1-е декабря, поменять на 6-е декабря
+		const startDate = new Date("2021-12-01").getTime();
 		
 		// создаем новую дату по итерации
 		const currentDateData = {
@@ -46,7 +47,7 @@ const Admin = () => {
 		
 		// проверяем, есть ли заполненный день в сторе с такой датой
 		const search = allThemes.find(item => {
-			return new Date(item.date).getTime() === currentDateData.date.getTime()
+			return item.date == currentDateData.date.getTime()
 		});
 		
 		// если есть такой заполненный день, то устанавливаем его, если нет - пустую дату
