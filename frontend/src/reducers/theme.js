@@ -17,7 +17,7 @@ import {
 } from "../constants";
 
 const initialState = {
-	currentTheme: {},
+	currentTheme: '',
 	allThemes: [],
 	isLoading: false,
 	errorThemeLoading: '',
@@ -28,7 +28,7 @@ export default function themeReducer(state = initialState, action) {
 		case GET_DAY_REQUEST:
 			return {
 				...state,
-				currentTheme: {},
+				currentTheme: '',
 				isLoading: true,
 				errorThemeLoading: ''
 			};
@@ -44,7 +44,7 @@ export default function themeReducer(state = initialState, action) {
 		case GET_DAY_FAILED:
 			return {
 				...state,
-				currentTheme: {},
+				currentTheme: '',
 				isLoading: false,
 				errorThemeLoading: action.payload
 			};

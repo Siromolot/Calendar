@@ -6,6 +6,8 @@ import {getDay} from "../../../actions/theme";
 
 const CalendarItemModal = ({data}) => {
 	
+	console.log('data: ', data)
+	
 	const {
 		department,
 		currentTheme,
@@ -30,17 +32,21 @@ const CalendarItemModal = ({data}) => {
 			{
 				department ?
 					(dayIsOpen ?
+						currentTheme?.title ?
 						<div>
-							<p>
-							{currentTheme?.title}
-							</p>
-							<p>
-								{currentTheme.description}
-							</p>
-							<p>
-								{currentTheme.link}
-							</p>
+								<p>
+								{currentTheme?.title}
+								</p>
+								<p>
+									{currentTheme?.description}
+								</p>
+								<p>
+									{currentTheme?.link}
+								</p>
 						</div> :
+							<div className={'modal__closed-day'}>
+								{currentTheme}
+							</div> :
 						<div className={'modal__closed-day'}>
 							Рано заглянул сюда, не торопись&nbsp;)
 						</div>) :
