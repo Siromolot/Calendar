@@ -56,6 +56,11 @@ const ThemeModal = ({dataTheme}) => {
 					label='Краткое описание'
 					initialValue={dataTheme?.theme?.description || ''}
 					className={'form__fields'}
+					rules={[
+						{
+							required: true,
+							message: 'Пожалуйста, укажите тему',
+						}]}
 				>
 					<TextArea rows={2}/>
 				</Form.Item>
