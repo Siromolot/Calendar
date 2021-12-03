@@ -23,15 +23,23 @@ const AdminCalendarItem = ({data}) => {
 				{data.department ?
 					<div>
 						<div>{data.title}</div>
-						<div>
+						<div className={'admin__button-block'}>
 							<Button
+								className={'admin__button'}
+								type={'primary'}
 								onClick={() => setModal({theme: data})}>Изменить</Button>
 							<Button
-								onClick={() => setModal({theme: data, deleting: true})}>Удалить</Button>
+								onClick={() => setModal({theme: data, deleting: true})}
+								danger
+								type={'primary'}
+							>
+								Удалить
+							</Button>
 						</div>
 					</div> :
 					<div>
 						<Button
+							className={'admin__button-block'}
 							onClick={() => setModal({theme: {data}})}>Добавить</Button>
 					</div>}
 			</div>
