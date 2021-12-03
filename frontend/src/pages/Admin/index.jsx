@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getAllDays} from "../../actions/theme";
 import {logoutAction} from "../../actions/auth";
 import AdminCalendarItem from "../../components/Admin/AdminCalendarItem";
+import Modal from "../../components/Modal";
 
 const Admin = () => {
 	
@@ -16,8 +17,10 @@ const Admin = () => {
 	
 	const {
 		allThemes,
+		modal,
 	} = useSelector(state => ({
-		allThemes: state.theme.allThemes
+		allThemes: state.theme.allThemes,
+		modal: state.modal.modal,
 	}));
 	
 	useEffect(() => {
@@ -71,6 +74,10 @@ const Admin = () => {
 			{dates.map(item => {
 				return <AdminCalendarItem key={item.date} data={item.date}/>
 			})}
+			
+			{
+				modal ? <Modal /> : null
+			}
 		</div> :
 		<Redirect to={'/auth'} />
 	)
