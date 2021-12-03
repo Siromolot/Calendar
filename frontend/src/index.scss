@@ -1,4 +1,4 @@
-$link_color: white;
+$dark_white: darken(white, 10%);
 $color_lad: #004BFF;
 $medium_width: 1075px;
 $small_width: 800px;
@@ -25,14 +25,14 @@ $less_than_old_mobile_size: 299px;
 body {
   background-image: url('../src/assets/images/backgroundNY5.jpg');
   font-family: 'Inter-Regular';
-  color: white;
+  color: $dark_white;
   font-size: 18px;
   line-height: 1.5;
 }
 
 p {
   margin-bottom: 18px;
-  color: white;
+  color: $dark_white;
 }
 
 .select__wrapper {
@@ -55,7 +55,7 @@ p {
 
 //  перебивка antD
 .ant-select {
-  color: white;
+  color: $dark_white;
 }
 
 .ant-select-selector {
