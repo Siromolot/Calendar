@@ -1,5 +1,6 @@
 import React from 'react';
-import './';
+import './index.scss';
+import '../index.scss';
 import {useDispatch} from "react-redux";
 import {setModalData, toggleModal} from "../../../actions/modal";
 import {Button} from "antd";
@@ -26,23 +27,25 @@ const DeletingModal = ({data}) => {
 	
 	return (
 		<div className={'modal__body'}>
-			<p>Подтвердите удаление</p>
-			
-			<div className={'admin__button-block'}>
-				<Button
-					className={'admin__button'}
-					type={'primary'}
-					danger
-					onClick={() => deleteItem()}
-				>
-					Удалить
-				</Button>
-				<Button
-					className={'admin__button'}
-					onClick={() => cancelDeleting()}
-				>
-					Отмена
-				</Button>
+			<div className={'deleting__block'}>
+				<p>Подтвердите удаление</p>
+				
+				<div className={'admin__button-block'}>
+					<Button
+						className={'admin__button deleting__button'}
+						type={'primary'}
+						danger
+						onClick={() => deleteItem()}
+					>
+						Удалить
+					</Button>
+					<Button
+						className={'admin__button deleting__button'}
+						onClick={() => cancelDeleting()}
+					>
+						Отмена
+					</Button>
+				</div>
 			</div>
 		</div>
 	)
