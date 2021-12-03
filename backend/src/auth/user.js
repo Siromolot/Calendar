@@ -11,7 +11,7 @@ export default function(server){
             (который может хранится у него как в localStorage, так и в куках) и
             должны сравнить со множеством токенов, которые уже должны храниться в БД,
             для чего, собственно, и подключим БД MongoDB*/
-            const user = await db.user.findOne({token});
+            const user = await db.moderator.findOne({token});
 
             if (user && token !== null) {
                 return {

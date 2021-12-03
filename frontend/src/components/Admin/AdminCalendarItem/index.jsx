@@ -16,7 +16,7 @@ const AdminCalendarItem = ({data}) => {
 	return (
 		<div className={'admin-calendar-item__wrapper'}>
 			<div>
-				{new Date(data).getDate()}
+				{new Date(data.date).getDate()}
 			</div>
 			
 			<div>
@@ -32,7 +32,7 @@ const AdminCalendarItem = ({data}) => {
 					</div> :
 					<div>
 						<Button
-							onClick={() => setModal({theme: {}})}>Добавить</Button>
+							onClick={() => setModal({theme: {data}})}>Добавить</Button>
 					</div>}
 			</div>
 		</div>

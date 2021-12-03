@@ -45,7 +45,7 @@ const Admin = () => {
 		
 		// проверяем, есть ли заполненный день в сторе с такой датой
 		const search = allThemes.find(item => {
-			return item.date === currentDateData.date
+			return new Date(item.date).getTime() === currentDateData.date.getTime()
 		});
 		
 		// если есть такой заполненный день, то устанавливаем его, если нет - пустую дату
@@ -72,7 +72,7 @@ const Admin = () => {
 			</div>
 			
 			{dates.map(item => {
-				return <AdminCalendarItem key={item.date} data={item.date}/>
+				return <AdminCalendarItem key={item.date} data={item}/>
 			})}
 			
 			{

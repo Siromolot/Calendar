@@ -5,10 +5,14 @@ import {
 	GET_ALL_DAYS_REQUEST,
 	GET_ALL_DAYS_SUCCESS,
 	GET_ALL_DAYS_FAILED,
+	ADD_THEME_REQUEST,
+	ADD_THEME_SUCCESS,
+	ADD_THEME_FAILED,
 	URL,
 	getCookie
 } from '../constants';
 import axios from "axios";
+import {toggleModal} from "./modal";
 
 export const getDay = (data) => async (dispatch, getStore) => {
 	dispatch({
@@ -64,4 +68,36 @@ export const getAllDays = () => async (dispatch) => {
 			payload: err.message
 		})
 	}
-}
+};
+
+export const addTheme = (data) => async (dispatch) => {
+	dispatch({
+		type: ADD_THEME_REQUEST
+	});
+	
+	const token = getCookie('token');
+	const config = {
+		headers: {
+			Authorization: "Bearer" + " " + token
+		}
+	};
+	
+	try{
+		
+		const response = await axios.post(
+			`${URL}themes`, data, config)
+		
+		dispatch({
+			type: ADD_THEME_SUCCESS,
+			payload: response.data
+		});
+		
+		dispatch(toggleModal(false));
+		
+	} catch (err) {
+		dispatch({
+			type: ADD_THEME_FAILED,
+			payload: err.message
+		})
+	}
+};

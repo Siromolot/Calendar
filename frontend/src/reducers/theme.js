@@ -5,6 +5,9 @@ import {
 	GET_ALL_DAYS_REQUEST,
 	GET_ALL_DAYS_SUCCESS,
 	GET_ALL_DAYS_FAILED,
+	ADD_THEME_REQUEST,
+	ADD_THEME_SUCCESS,
+	ADD_THEME_FAILED,
 } from "../constants";
 
 const initialState = {
@@ -38,6 +41,28 @@ export default function themeReducer(state = initialState, action) {
 				allThemes: null,
 				isLoading: false,
 				errorThemeLoading: action.payload.message
+			};
+		
+		case ADD_THEME_REQUEST:
+			return {
+				...state,
+				isLoading: true,
+				errorThemeLoading: ''
+			};
+		
+		case ADD_THEME_SUCCESS:
+			return {
+				...state,
+				allThemes: [...state.allThemes, action.payload],
+				isLoading: false,
+				errorThemeLoading: ''
+			};
+		
+		case ADD_THEME_FAILED:
+			return {
+				...state,
+				isLoading: false,
+				errorThemeLoading: action.payload
 			};
 			
 		default: return state;

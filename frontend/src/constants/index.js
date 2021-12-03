@@ -19,6 +19,10 @@ export const GET_ALL_DAYS_REQUEST = 'GET_ALL_DAYS_REQUEST';
 export const GET_ALL_DAYS_SUCCESS = 'GET_ALL_DAYS_SUCCESS';
 export const GET_ALL_DAYS_FAILED = 'GET_ALL_DAYS_FAILED';
 
+export const ADD_THEME_REQUEST = 'ADD_THEME_REQUEST';
+export const ADD_THEME_SUCCESS = 'ADD_THEME_SUCCESS';
+export const ADD_THEME_FAILED = 'ADD_THEME_FAILED';
+
 export const URL = process.env.NODE_ENV === "production" ?
     // TODO: указать новый url
     "https://shaurma-nn.ru:49000/" : "http://localhost:49000/";
