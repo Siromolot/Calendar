@@ -15,7 +15,7 @@ const SelectDepartment = () => {
 	}
 	
 	const departments = [
-		// {value: 'frontend', name: 'Frontend разработка'},
+		{value: 'frontend', name: 'Frontend разработка'},
 		// {value: 'backend', name: 'Backend разработка'},
 		// {value: 'mobile', name: 'Мобильная разработка'},
 		// {value: 'qa', name: 'Тестирование'},
