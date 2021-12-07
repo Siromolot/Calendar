@@ -13,7 +13,7 @@
 
 .modal__body {
   width: 50%;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
   z-index: 1400;
   background: url('../../assets/images/backgroundNY5.jpg');
@@ -30,11 +30,13 @@
   @media (max-width: $medium_width) {
     width: 60%;
     overflow: auto;
+    padding: 20px;
   }
 
   @media (max-width: $small_width) {
     width: 70%;
     overflow: auto;
+    padding: 20px;
   }
 
   @media (max-width: $mobile_size) {
@@ -42,6 +44,7 @@
     max-width: 400px;
     max-height: 80vh;
     overflow: auto;
+    padding: 20px;
   }
 }
 
