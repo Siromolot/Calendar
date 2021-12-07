@@ -24,7 +24,7 @@ const CalendarItemModal = ({data}) => {
 	const dayIsOpen = currentDay > new Date(data.date).getTime();
 	
 	useEffect(() => {
-		if (department) {
+		if (department && dayIsOpen) {
 			dispatch(getDay(data))
 		}
 	}, []);
