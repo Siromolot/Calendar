@@ -31,6 +31,12 @@ const CalendarItemModal = ({data}) => {
 	
 	return (
 		<div className={'modal__body'}>
+			{isLoading ?
+				<p className={'modal__calendar-item_topic'}>
+					Загрузка дня...
+				</p> : null
+			}
+			
 			{
 				department ?
 					(dayIsOpen ?
@@ -59,12 +65,6 @@ const CalendarItemModal = ({data}) => {
 						<div className={'modal__closed-day'}>
 							Чтобы увидеть интересности - надо сначала выбрать направление
 						</div>
-			}
-			
-			{isLoading ?
-				<p className={'modal__calendar-item_topic'}>
-					Загрузка дня...
-				</p> : null
 			}
 		</div>
 	)
