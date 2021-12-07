@@ -75,7 +75,7 @@ export default function themeReducer(state = initialState, action) {
 		case GET_ALL_DAYS_FAILED:
 			return {
 				...state,
-				allThemes: null,
+				allThemes: [],
 				isLoading: false,
 				errorThemeLoading: action.payload.message
 			};
