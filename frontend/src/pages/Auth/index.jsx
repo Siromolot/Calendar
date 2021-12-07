@@ -74,6 +74,10 @@ const Auth = () => {
 				</Form.Item>
 			</Form>
 			
+			<div className={'error_mes'}>
+				{errorAuth?.data?.message}
+			</div>
+			
 			<Link to={'/'}>
 				Вернуться на сайт
 			</Link>

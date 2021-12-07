@@ -5,6 +5,7 @@ $small_width: 800px;
 $mobile_size: 500px;
 $old_mobile_size: 359px;
 $less_than_old_mobile_size: 299px;
+$color_error: lighten(red, 15%);
 
 
 * {
@@ -68,3 +69,10 @@ p {
 }
 
 // конец antD
+
+.error_mes {
+  height: 20.91px;
+  color: $color_error;
+  font-size: 14px;
+  margin: 10px 0;
+}
