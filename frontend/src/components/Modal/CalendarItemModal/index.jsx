@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import '../index.scss';
 import './index.scss';
 import {useDispatch, useSelector} from "react-redux";
-import {getDay} from "../../../actions/theme";
+import {clearErrorTheme, getDay} from "../../../actions/theme";
 
 const CalendarItemModal = ({data}) => {
 	
@@ -12,10 +12,12 @@ const CalendarItemModal = ({data}) => {
 		department,
 		currentTheme,
 		isLoading,
+		errorThemeLoading,
 	} = useSelector(state => ({
 		department: state.department.department,
 		currentTheme: state.theme.currentTheme,
 		isLoading: state.theme.isLoading,
+		errorThemeLoading: state.theme.errorThemeLoading,
 	}))
 	
 	const dispatch = useDispatch();
@@ -26,11 +28,19 @@ const CalendarItemModal = ({data}) => {
 	useEffect(() => {
 		if (department && dayIsOpen) {
 			dispatch(getDay(data))
+		} else {
+			dispatch(clearErrorTheme())
 		}
 	}, []);
 	
 	return (
 		<div className={'modal__body'}>
+			{errorThemeLoading.message ?
+				<p className={'modal__calendar-item_topic error_mes'}>
+					Упс, какая-то ошибка. Новогодняя ошибка, лол )
+				</p> : null
+			}
+			
 			{isLoading ?
 				<p className={'modal__calendar-item_topic'}>
 					Загрузка дня...

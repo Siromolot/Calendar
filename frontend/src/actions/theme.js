@@ -14,12 +14,18 @@ import {
 	DELETE_THEME_REQUEST,
 	DELETE_THEME_SUCCESS,
 	DELETE_THEME_FAILED,
+	CLEAR_ERROR_THEME,
 	URL,
 	getCookie
 } from '../constants';
 import axios from "axios";
 import {toggleModal} from "./modal";
 
+export const clearErrorTheme = () => {
+	return {
+		type: CLEAR_ERROR_THEME
+	}
+}
 export const getDay = (data) => async (dispatch, getStore) => {
 	dispatch({
 		type: GET_DAY_REQUEST
@@ -40,7 +46,8 @@ export const getDay = (data) => async (dispatch, getStore) => {
 		})
 	} catch (err) {
 		dispatch({
-			type: GET_DAY_FAILED
+			type: GET_DAY_FAILED,
+			payload: err.response.data
 		})
 	}
 }

@@ -14,6 +14,7 @@ import {
 	DELETE_THEME_REQUEST,
 	DELETE_THEME_SUCCESS,
 	DELETE_THEME_FAILED,
+	CLEAR_ERROR_THEME,
 } from "../constants";
 
 const initialState = {
@@ -25,7 +26,13 @@ const initialState = {
 
 export default function themeReducer(state = initialState, action) {
 	switch (action.type) {
-		case GET_DAY_REQUEST:
+		case CLEAR_ERROR_THEME:
+			return {
+				...state,
+				errorThemeLoading: ''
+			};
+			
+			case GET_DAY_REQUEST:
 			return {
 				...state,
 				currentTheme: '',
