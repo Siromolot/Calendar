@@ -11,9 +11,11 @@ const CalendarItemModal = ({data}) => {
 	const {
 		department,
 		currentTheme,
+		isLoading,
 	} = useSelector(state => ({
 		department: state.department.department,
 		currentTheme: state.theme.currentTheme,
+		isLoading: state.theme.isLoading,
 	}))
 	
 	const dispatch = useDispatch();
@@ -57,6 +59,12 @@ const CalendarItemModal = ({data}) => {
 						<div className={'modal__closed-day'}>
 							Чтобы увидеть интересности - надо сначала выбрать направление
 						</div>
+			}
+			
+			{isLoading ?
+				<p className={'modal__calendar-item_topic'}>
+					Загрузка дня...
+				</p> : null
 			}
 		</div>
 	)
