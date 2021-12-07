@@ -1,0 +1,22 @@
+@import "../../index";
+
+.not-found__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.not-found__big_topic {
+  font-size: 70px;
+  padding: 40px 0;
+}
+
+.not-found__text {
+  text-align: center;
+}
+
+.not-found__link-back {
+  margin-top: 70px;
+}
