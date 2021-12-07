@@ -19,7 +19,7 @@ const SelectDepartment = () => {
 		// {value: 'backend', name: 'Backend разработка'},
 		// {value: 'mobile', name: 'Мобильная разработка'},
 		// {value: 'qa', name: 'Тестирование'},
-		{value: 'product', name: 'Менеджмент продуктов'},
+		{value: 'product', name: 'Управление проектами'},
 	]
 	
 	return (
