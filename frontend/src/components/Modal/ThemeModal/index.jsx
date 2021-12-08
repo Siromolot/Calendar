@@ -50,7 +50,7 @@ const ThemeModal = ({dataTheme}) => {
 							message: 'Пожалуйста, укажите тему',
 						},
 					]}>
-					<Input />
+					<Input autoComplete={'off'}/>
 				</Form.Item>
 				
 				<Form.Item
@@ -64,7 +64,7 @@ const ThemeModal = ({dataTheme}) => {
 							message: 'Пожалуйста, укажите тему',
 						}]}
 				>
-					<TextArea rows={2}/>
+					<TextArea rows={2} autoComplete={'off'} />
 				</Form.Item>
 				
 				<Form.Item
@@ -78,7 +78,7 @@ const ThemeModal = ({dataTheme}) => {
 							message: 'Пожалуйста, укажите ссылку',
 						},
 					]}>
-					<Input />
+					<Input autoComplete={'off'} />
 				</Form.Item>
 				
 				<Form.Item>
