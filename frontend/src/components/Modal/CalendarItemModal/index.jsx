@@ -58,13 +58,18 @@ const CalendarItemModal = ({data}) => {
 								<p className={'modal__calendar-item_description'}>
 									{currentTheme?.description}
 								</p>
-								<a className={'modal__calendar-item_description'}
-									href={currentTheme?.link}
-									target={'_blank'}
-									aria-label={'to the theme link'}
-									rel='noreferrer'>
-									{currentTheme?.link}
-								</a>
+							{currentTheme?.link.split(',').map(item => (
+								<p key={item}>
+									<a className={'modal__calendar-item_description'}
+										 href={item}
+										 target={'_blank'}
+										 aria-label={'to the theme link'}
+										 rel='noreferrer'>
+										{item}
+									</a>
+								</p>
+							))}
+							
 						</div> :
 							<div className={'modal__closed-day'}>
 								{currentTheme}
