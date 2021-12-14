@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
-import { HashRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Main from './pages/Main';
 import Auth from './pages/Auth';
@@ -11,25 +10,28 @@ function App() {
 
     const pages = [
       {
-          path: '/',
-          component: Main
+        path: '/',
+        element: <Main />
       },
       {
-        path: '/auth',
-        component: Auth
+        path: 'auth',
+        element: <Auth />
       },
       {
-        path: '/admin',
-        component: Admin
+        path: 'admin',
+        element: <Admin />
+      },
+      {
+        path: '*',
+        element: <NotFound />
       },
     ];
 
     const pageItem = pages.map(page => (
         <Route
             key={page.path}
-            exact
             path={page.path}
-            component={page.component}
+            element={page.element}
         />
     ))
   
@@ -37,11 +39,9 @@ function App() {
   const resultPageItem = [...pageItem, notFoundPage]
 
   return (
-      <HashRouter>
-          <Switch>
-              {resultPageItem}
-          </Switch>
-      </HashRouter>
+        <Routes>
+            {resultPageItem}
+        </Routes>
   )
 }
 

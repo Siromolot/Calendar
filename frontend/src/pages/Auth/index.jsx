@@ -4,7 +4,7 @@ import './index.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {loginAction} from "../../actions/auth";
 import {getCookie} from "../../constants";
-import {Link, Redirect} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 
 const Auth = () => {
 	
@@ -28,7 +28,7 @@ const Auth = () => {
 	};
 	
 	return (token && department ?
-			<Redirect to={'/admin'} /> :
+			<Navigate to={'/admin'} replace /> :
 			
 		<div className={'auth__wrapper'}>
 			<Form

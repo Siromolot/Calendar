@@ -2,19 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store, {history} from "./store";
 import { Provider } from "react-redux";
-import { ConnectedRouter } from "connected-react-router";
-// import {HashRouter} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <Provider store={store}>
-      {/*<ConnectedRouter history={history}>*/}
-          {/*<HashRouter>*/}
-            <App />
-          {/*</HashRouter>*/}
-      {/*</ConnectedRouter>*/}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import './index.scss';
 import { getCookie } from "../../constants";
-import {Link, Redirect} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllDays} from "../../actions/theme";
 import {logoutAction} from "../../actions/auth";
@@ -81,7 +81,7 @@ const Admin = () => {
 				modal ? <Modal /> : null
 			}
 		</div> :
-		<Redirect to={'/auth'} />
+		<Navigate to={'/auth'} />
 	)
 };
 
