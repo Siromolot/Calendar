@@ -34,13 +34,10 @@ function App() {
             element={page.element}
         />
     ))
-  
-  const notFoundPage = <Route return component={NotFound} />
-  const resultPageItem = [...pageItem, notFoundPage]
 
   return (
         <Routes>
-            {resultPageItem}
+            {pageItem}
         </Routes>
   )
 }
