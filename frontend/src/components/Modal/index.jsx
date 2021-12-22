@@ -28,7 +28,7 @@ const Modal = () => {
       {modalData.theme && !modalData.deleting ?
         <ThemeModal dataTheme={modalData} /> : null}
   
-       модальное окно для удаления чего-либо
+      {/*модальное окно для удаления чего-либо*/}
       {modalData.deleting ?
         <DeletingModal data={modalData} /> : null}
 
